@@ -4,8 +4,8 @@
 
 class ResponseBook {
   ResponseBook({
-      this.status, 
-      this.message, 
+      this.status,
+      this.message,
       this.data,});
 
   ResponseBook.fromJson(dynamic json) {
@@ -14,13 +14,13 @@ class ResponseBook {
     if (json['data'] != null) {
       data = [];
       json['data'].forEach((v) {
-        data?.add(Data.fromJson(v));
+        data?.add(DataBook.fromJson(v));
       });
     }
   }
   int? status;
   String? message;
-  List<Data>? data;
+  List<DataBook>? data;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -44,19 +44,19 @@ class ResponseBook {
 /// updated_at : "2024-01-09T05:43:09.000000Z"
 /// kategori : {"id":1,"nama":"umum"}
 
-class Data {
-  Data({
-      this.id, 
-      this.kategoriId, 
-      this.judul, 
-      this.penulis, 
-      this.penerbit, 
-      this.tahunTerbit, 
-      this.createdAt, 
-      this.updatedAt, 
+class DataBook {
+  DataBook({
+      this.id,
+      this.kategoriId,
+      this.judul,
+      this.penulis,
+      this.penerbit,
+      this.tahunTerbit,
+      this.createdAt,
+      this.updatedAt,
       this.kategori,});
 
-  Data.fromJson(dynamic json) {
+  DataBook.fromJson(dynamic json) {
     id = json['id'];
     kategoriId = json['kategori_id'];
     judul = json['judul'];
